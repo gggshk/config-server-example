@@ -2,9 +2,9 @@ spring:
   application:
     name: app
   config:
-    import: optional:configserver:http://localhost:8888 # optional 접두사를 제거하면 fail-fast=true 와 같다.
-  cloud:
-    config:
-      fail-fast: true # 구성 서버 연결에 실패하면 클라이언트도 실행 실패
-      retry: # 구성 서버 연결에 실패할 경우 재시도를 할 수 있다. fail-fast=true가 선행되어야 한다.
-        max-attempts: 3 # 재시도 횟수
+    import: configserver:http://localhost:8888?fail-fast=true&max-attempts=5&max-interval=1000&initial-interval=100 # import를 사용하여 재시도도 가능하다.
+#  cloud:
+#    config:
+#      fail-fast: true # 구성 서버 연결에 실패하면 클라이언트도 실행 실패
+#      retry: # 구성 서버 연결에 실패할 경우 재시도를 할 수 있다. fail-fast=true가 선행되어야 한다.
+#        max-attempts: 2 # 재시도 횟수
