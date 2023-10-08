@@ -5,14 +5,9 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:gggshk/spring-cloud-config-example.git # 설정 파일을 저장한 레포지토리 주소
+          uri: https://github.com/gggshk/spring-cloud-config-example # 설정 파일을 저장한 레포지토리 주소
           search-paths: files/** # 설정 파일을 조회할 디렉터리 경로
           default-label: main # 클라이언트가 브랜치를 따로 지정하지 않으면 해당 브랜치를 기본으로 사용
           clone-on-start: on # 서버가 시작될 때 저장소를 클론한다. 잘못된 설정(잘못된 저장소 uri 등)을 빠르게 식별할 수 있기 때문에 해당 설정을 on하는 것을 추천한다.
-          ignore-local-ssh-settings: true # ssh인증을 하기 위해서는 true가 되어야 한다.
-          strict-host-key-checking: true # false인 경우 호스트 키 에러를 무시한다.
-          host-key: # hostKey
-          host-key-algorithm: # hostKeyAlgorithm
-          private-key: # privateKey
 server:
   port: 8888 # 기본 포트는 8080이다.
