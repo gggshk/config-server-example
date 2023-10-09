@@ -1,25 +1,29 @@
 spring:
-  profiles:
-    active: jdbc
+#  profiles:
+#    active: jdbc
   application:
     name: spring-cloud-config-server
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: ${DB_URL}
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
-  sql:
-    init:
-      schema-locations: classpath:schema.sql
-      mode: always
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: ${DB_URL}
+#    username: ${DB_USERNAME}
+#    password: ${DB_PASSWORD}
+#  sql:
+#    init:
+#      schema-locations: classpath:schema.sql
+#      mode: always
   cloud:
     config:
       server:
-        jdbc:
-          enabled: true
+        git:
+          uri: https://github.com/gggshk/spring-cloud-config-example
           default-label: main
-          fail-on-error: true
-          sql: SELECT `KEY`, `VALUE` FROM PROPERTIES where APPLICATION=? and PROFILE=? and LABEL=?
+          search-paths: files/**
+#        jdbc:
+#          enabled: true
+#          default-label: main
+#          fail-on-error: true
+#          sql: SELECT `KEY`, `VALUE` FROM PROPERTIES where APPLICATION=? and PROFILE=? and LABEL=?
 server:
   port: 8888 # 기본 포트는 8080이다.
 logging:
