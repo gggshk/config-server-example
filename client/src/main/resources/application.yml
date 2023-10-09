@@ -8,3 +8,8 @@ spring:
 #      fail-fast: true # 구성 서버 연결에 실패하면 클라이언트도 실행 실패
 #      retry: # 구성 서버 연결에 실패할 경우 재시도를 할 수 있다. fail-fast=true가 선행되어야 한다.
 #        max-attempts: 2 # 재시도 횟수
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
