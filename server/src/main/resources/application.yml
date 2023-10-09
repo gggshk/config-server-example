@@ -27,8 +27,11 @@ spring:
 server:
   port: 8888 # 기본 포트는 8080이다.
 encrypt:
-  key: ${ENCRYPT_KEY} # 암호화 키
   fail-on-error: true
+  key-store:
+    alias: ${KEY_STORE_ALIAS}
+    location: classpath:config-server.jks
+    password: ${KEY_STORE_PASSWORD}
 logging:
   level:
     org.springframework.jdbc: debug
