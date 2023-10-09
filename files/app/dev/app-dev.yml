@@ -1,5 +1,5 @@
 spring:
   datasource:
-    url: jdbc:mysql://dev-server/dev
-    username: dev
-    password: dev1234
+    url: '{cipher}1d92490659bbab87dde63465b5f9091fe26c0c74116ef38be63586f44f7e0e10e1cd90371ed7f78b78a9821eaf194f81'
+    username: '{cipher}62f21e412f3db188221b8b8232f487e8f30338999982ce8fa60957ea72c6691c'
+    password: '{cipher}8cf0c238ce0b6603a340069ae5040522ad75eeec663aab77a926011f8bedf3d0'

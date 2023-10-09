@@ -26,6 +26,9 @@ spring:
 #          sql: SELECT `KEY`, `VALUE` FROM PROPERTIES where APPLICATION=? and PROFILE=? and LABEL=?
 server:
   port: 8888 # 기본 포트는 8080이다.
+encrypt:
+  key: ${ENCRYPT_KEY} # 암호화 키
+  fail-on-error: true
 logging:
   level:
     org.springframework.jdbc: debug
